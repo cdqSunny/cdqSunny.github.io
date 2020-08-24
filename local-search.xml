@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>上传图片预览</title>
+    <link href="/2020/08/22/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%95%88%E6%9E%9C/"/>
+    <url>/2020/08/22/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E9%A2%84%E8%A7%88%E6%95%88%E6%9E%9C/</url>
+    
+    <content type="html"><![CDATA[<p>上传图片预览4步固定语法</p><a id="more"></a><p>  1.给file表单注册onchange事件: 用户选择了文件   (核心原理:取出二进制图片转成img标签可以识别的路径)</p><pre><code class="hljs js">$(<span class="hljs-string">&#x27;选择器&#x27;</span>).change(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span><span class="hljs-function"></span><span class="hljs-function">         <span class="hljs-title">console</span>.<span class="hljs-title">log</span>(<span class="hljs-params"><span class="hljs-string">&#x27;用户选择了文件&#x27;</span></span>);</span></code></pre><p>2.获取图片的: 原生DOM语法</p><pre><code class="hljs js"><span class="hljs-keyword">let</span>  file = <span class="hljs-built_in">this</span>.file[<span class="hljs-number">0</span>];  <span class="hljs-built_in">console</span>.log(file)</code></pre><p>  3.将图片二进制转成url</p><pre><code class="hljs js"><span class="hljs-keyword">let</span> url = URL.createObjectURL(file);    conaole.log(url);</code></pre><p>4.生成的url显示到img标签的src中</p><pre><code class="hljs js">   $(<span class="hljs-string">&#x27;img标签&#x27;</span>).attr(<span class="hljs-string">&#x27;src&#x27;</span>,url);&#125;)</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>上传图片预览功能语法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Postman</title>
+    <link href="/2020/08/22/Postman%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <url>/2020/08/22/Postman%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<p>Postman 软件的使用</p><a id="more"></a><p>拿到后台的接口有get 和post</p><p>post接口的使用方法如下:</p><img src="https://cdn.jsdelivr.net/gh/cdqSunny/cdn/1598071109904.png" class="[描述]">]]></content>
+    
+    
+    <categories>
+      
+      <category>查看后台接口</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>onreadystatechange事件</title>
+    <link href="/2020/08/22/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/"/>
+    <url>/2020/08/22/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6/</url>
+    
+    <content type="html"><![CDATA[<p>onreadystatechange 事件 </p><a id="more"></a><p>onreadystatechange 事件 和 onload 事件的区别</p><p> * 都是服务器响应事件</p><p> * 兼容性不同</p><p><strong>onload 是新出的,老版本的浏览器不兼容</strong> </p><p> <strong>onreadystatechange  浏览器兼容比较好</strong></p><p>作用:</p><p>   1.可以多次调用</p><p>​    2.需要判断执行几次,默认执行3次,   xhr.readyState==4 (才可以响应服务器的数据1次)</p><pre><code class="hljs js"><span class="hljs-comment">//  1.实例化对象</span>  <span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();  <span class="hljs-comment">// 2.  设置请求方式和地址</span>  xhr.open(<span class="hljs-string">&#x27;post&#x27;</span>, <span class="hljs-string">&#x27;http://www.tuling123.com/openapi/api&#x27;</span>);  <span class="hljs-comment">// 3.请求头</span>  xhr.setRequestHeader(<span class="hljs-string">&#x27;Content-type&#x27;</span>, <span class="hljs-string">&#x27;application/x-www-form-urlencoded&#x27;</span>);  <span class="hljs-comment">// 4. 发送请求</span>  xhr.send(<span class="hljs-string">&#x27;key=8b2116b8ddb94b6681fbbef3ee9bbbce&amp;info= &#x27;</span>);  <span class="hljs-comment">// 5. 响应回调</span>  xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;      <span class="hljs-keyword">if</span> (xhr.readyState == <span class="hljs-number">4</span>) &#123;          <span class="hljs-built_in">console</span>.log(xhr.responseText);      &#125;  &#125;</code></pre><p>​      </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>服务器响应事件</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
